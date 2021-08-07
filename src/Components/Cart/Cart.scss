@@ -1,0 +1,143 @@
+/* Navbar */
+
+.cart-container {
+  font-family: "Poppins", sans-serif;
+}
+.cart-container .navbar {
+  border-bottom: 1px solid grey !important;
+}
+.cart-container .navbar .items .link {
+  color: black !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  height: 100%;
+  cursor: pointer !important;
+}
+
+.cart-container .navbar .items button.link {
+  height: 40px;
+  width: 100px;
+  background-color: #dc3545;
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+}
+
+.cart-container .navbar .items button.link:hover {
+  background-color: #ff3030 !important;
+}
+
+/* Cart */
+
+.cart-container .title {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cart-container .title h3 {
+  font-size: 30px;
+}
+
+.cart-container .title p {
+  font-size: 20px;
+}
+
+.cart-container .cart table {
+  width: 50rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-left: 2rem;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cart-container .cart table tr th {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 0;
+  height: auto;
+}
+
+.cart-container .cart table tr {
+  line-height: 5rem;
+}
+
+.cart-container .cart table .line .about {
+  display: flex;
+  align-items: center;
+}
+
+.cart-container .cart table .line .about p {
+  font-weight: bold;
+}
+
+.cart-container .cart table .line .about img {
+  border-radius: 5px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.cart-container .cart table .btns button {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.cart-container .cart table .btns button:first-child {
+  background-color: #f22c00;
+}
+
+.cart-container .cart table .btns button:last-child {
+  background-color: #04f700;
+}
+
+.cart-container .cart table .btns span {
+  font-size: 18px;
+}
+
+.cart-container .cart table .right-btns button {
+  background: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.cart-container .cart table .right-btns button i {
+  color: grey;
+  display: flex;
+  align-items: center;
+}
+/* Empty Cart */
+.empty-cart {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .cart-container .navbar {
+    height: auto;
+    padding: 0 0 10px 0;
+  }
+
+  .cart-container .navbar .items {
+    width: 100%;
+  }
+  .cart-container .navbar .items .item .link {
+    text-align: center;
+    height: auto;
+    padding: 10px !important;
+  }
+}

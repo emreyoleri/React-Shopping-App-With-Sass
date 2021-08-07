@@ -1,0 +1,784 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+$animation: 0.8s ease all;
+$fontColor: white;
+$themeColor: #252b42;
+/* 0b343d */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  user-select: none;
+}
+p {
+  font-family: "Quicksand", sans-serif;
+}
+
+figcaption {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-btn {
+  position: fixed;
+  background-color: #1c1c1c;
+  color: $fontColor;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  z-index: 1;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ Header ------------------------------------------------------------------*/
+
+.Header {
+  height: 780px;
+  width: 100%;
+  background: url(https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  color: $fontColor;
+  background-attachment: fixed;
+}
+
+.filter {
+  width: 100%;
+  height: 780px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 104px;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar .logo {
+  margin-left: 10%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.navbar .items {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.navbar .items .item .link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: $fontColor;
+  transition: $animation;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.navbar .items .item:hover .link {
+  background-color: $fontColor;
+  color: black;
+}
+
+/* ------------------------------------------------------------------ Container-1 ------------------------------------------------------------------*/
+
+.Container-1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Container-1 .little-Container-1 {
+  width: 600px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.Container-1 .little-Container-1 h1 {
+  font-size: 58px;
+  display: block;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.Container-1 .little-Container-1 p {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.Container-1 .little-Container-1 .btns .btn-1 {
+  border: none;
+  width: 187px;
+  height: 48px;
+  background: #ffa62b;
+  border-radius: 37px;
+  color: $fontColor;
+  cursor: pointer;
+  transition: $animation;
+}
+
+.Container-1 .little-Container-1 .btns .btn-1:hover {
+  background-color: $fontColor;
+  color: #ffa62b;
+}
+
+.Container-1 .little-Container-1 .btns .btn-2 {
+  width: 187px;
+  height: 48px;
+  background: none;
+  border-radius: 37px;
+  color: $fontColor;
+  margin-left: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: $animation;
+}
+
+.Container-1 .little-Container-1 .btns .btn-2:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+/* ------------------------------------------------------------------ Fetures-3 ------------------------------------------------------------------*/
+
+.Fetures-3 {
+  background: $themeColor;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $fontColor;
+  text-align: center;
+}
+
+.Fetures-3 .article {
+  width: 100%;
+  background-color: #836fff;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Fetures-3 .article p {
+  display: block;
+}
+
+.Fetures-3 .article h1 {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.Fetures-3 .boxes {
+  width: 66rem;
+  padding: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Fetures-3 .boxes .box {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 328px;
+  height: auto;
+  background-color: $fontColor;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: grey;
+  padding: 20px 10px;
+}
+
+.Fetures-3 .boxes .box .header {
+  font-size: 25px;
+}
+
+.Fetures-3 .boxes .box .text {
+  margin-top: 10px;
+}
+.Fetures-3 .boxes .box .header i {
+  color: #00a0c1;
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+/* ------------------------------------------------------------------ Features-11 ------------------------------------------------------------------*/
+
+.Features-11 {
+  width: 100%;
+  height: auto;
+  color: $fontColor;
+  background: $themeColor;
+}
+.Features-11 .first {
+  background-color: #836fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 20px;
+}
+
+.Features-11 .second {
+  height: auto;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.Features-11 .first .text {
+  background-color: #836fff;
+  padding: 20px 0;
+}
+
+.Features-11 .first .text h1 {
+  font-size: 40px;
+  margin-bottom: 1rem;
+}
+
+.Features-11 .second .products {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.Features-11 .second .products .product {
+  margin-top: 20px;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Features-11 .second .products .product figure img {
+  border-radius: 20px 10px;
+  width: 100%;
+  border: 5px solid lightblue;
+}
+
+.Features-11 .second .products .product figure figcaption {
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.Features-11 .second .products .product button {
+  border: none;
+  width: 187px;
+  height: 48px;
+  background-color: #00a0c1;
+  border-radius: 10px 20px;
+  color: $fontColor;
+  cursor: pointer;
+  transition: $animation;
+  font-size: 17px;
+}
+.Features-11 .second .products .product button:hover {
+  background-color: #90e5f7;
+  color: black;
+}
+
+/* ----------------------------------------------- Testimonials ------------------------------------------- */
+
+.Testimonials-1 {
+  width: 100%;
+  height: auto;
+  background-color: $themeColor;
+  text-align: center;
+}
+
+.Testimonials-1 .text {
+  padding: 30px 0;
+  color: $fontColor;
+  background-color: #836fff;
+}
+
+.Testimonials-1 .text h1 {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.Testimonials-1 .clients {
+  width: 90rem;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Testimonials-1 .clients .client {
+  overflow: auto;
+  margin: 1rem;
+  color: black;
+  width: 329px;
+  height: 250px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.Testimonials-1 .clients .client span {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.Testimonials-1 .clients .client p {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.Testimonials-1 .clients .client .sender {
+  text-transform: uppercase;
+  color: #00a0c1;
+  font-size: 20px;
+}
+
+.Testimonials-1 .clients .client i {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.Testimonials-1 .clients .no-clients {
+  color: white;
+}
+
+/* ----------------------------------------------- Team ------------------------------------------- */
+
+.Team-1 {
+  height: auto;
+  width: 100%;
+  background-color: $themeColor;
+  color: $fontColor;
+}
+
+.Team-1 .text {
+  text-align: center;
+  background-color: #836fff;
+  padding: 30px;
+}
+
+.Team-1 .text h1 {
+  margin-bottom: 1rem;
+  font-size: 40px;
+}
+
+.Team-1 .people {
+  margin: 20px auto;
+  width: 90rem;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.Team-1 .people .person {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Team-1 .people .person img {
+  border-radius: 10px 10px 0 0;
+  border: 5px solid white;
+}
+
+.Team-1 .people .person .article {
+  border-radius: 0 0 10px 10px;
+  background-color: white;
+  width: 100%;
+}
+
+.Team-1 .people .person .article figure {
+  padding: 0 10px;
+}
+
+.Team-1 .people .person .article figure figcaption {
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.Team-1 .people .person .article figure .rank {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 25px;
+  text-align: center;
+  color: lightgrey;
+}
+
+.Team-1 .people .person .article .icons {
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.Team-1 .people .person .article .icons i {
+  font-size: 25px;
+  color: #00a0c1;
+  transition: $animation;
+  cursor: pointer;
+}
+
+.Team-1 .people .person .article .icons i:hover {
+  color: black;
+}
+
+/* ----------------------------------------------- Contact ------------------------------------------- */
+
+.Contact-1 {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  background-size: cover;
+  background-image: url(../Images/cover.png);
+}
+
+.Contact-1 .Contact-Filter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5rem 10rem;
+}
+
+.Contact-1 .text {
+  width: auto;
+  font-size: x-large;
+  margin-top: 3rem;
+  margin-left: 1.2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.Contact-1 .form {
+  width: 650px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Contact-1 .form .inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.Contact-1 .form .inputs input {
+  width: 286px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+}
+
+.Contact-1 .form textarea {
+  width: 100%;
+  height: 150px;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.Contact-1 .form button {
+  margin-top: 1rem;
+  border: none;
+  width: 187px;
+  height: 48px;
+  background-color: #ffa62b;
+  border-radius: 10px 20px;
+  color: $fontColor;
+  cursor: pointer;
+  font-size: 17px;
+  transition: $animation;
+}
+
+.Contact-1 .form button:hover {
+  border-radius: 20px 10px;
+  color: black;
+}
+
+/* ----------------------------------------------- Contact-Bottom ------------------------------------------- */
+
+.Contact-Bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #e8e8e8;
+  padding: 25px 0;
+}
+
+.Contact-Bottom .text h2 {
+  margin-bottom: 10px;
+}
+
+.Contact-Bottom button {
+  border: none;
+  width: 187px;
+  height: 48px;
+  background-color: #ffa62b;
+  border-radius: 5px;
+  color: $fontColor;
+  cursor: pointer;
+  transition: $animation;
+  font-size: 19px;
+  border-radius: 20px 10px;
+}
+
+.Contact-Bottom button:hover {
+  background-color: black;
+  border-radius: 10px 20px;
+}
+
+/* ------------------------------------------------------------------ Footer ------------------------------------------------------------------*/
+
+.Footer-6 {
+  height: auto;
+  width: 100%;
+  background-color: $themeColor;
+  padding: 0 5rem;
+}
+
+.Footer-6 .footbar {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+
+.Footer-6 .footbar h4 {
+  font-size: 25px;
+  color: white;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.Footer-6 .footbar .icons {
+  display: flex;
+  font-size: 25px;
+  width: 200px;
+  justify-content: space-between;
+}
+
+.Footer-6 .footbar .icons i {
+  cursor: pointer;
+}
+
+.Footer-6 .footbar .icons .bi-facebook {
+  color: #335bf5;
+}
+
+.Footer-6 .footbar .icons .bi-instagram {
+  color: #e51f5a;
+}
+
+.Footer-6 .footbar .icons .bi-twitter {
+  color: #21a6df;
+}
+
+.Footer-6 .footbar .icons .bi-youtube {
+  color: #e42f08;
+}
+
+.Footer-6 .links {
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 0;
+  color: lightgrey;
+}
+
+.Footer-6 .links .link {
+  list-style-type: none;
+  line-height: 2rem;
+  cursor: pointer;
+  margin-right: 3px;
+  width: 220px;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.Footer-6 .links .link li:first-child h4 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  letter-spacing: 1.2px;
+}
+
+.Footer-Bottom {
+  width: 100%;
+  background-color: #16697a;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive */
+@media only screen and (min-width: 2000px) {
+  .Contact-1 .Contact-Filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .navbar .items .item {
+    margin-left: 5px;
+  }
+
+  .navbar .items .item a {
+    width: 100px;
+    text-align: center;
+  }
+
+  .navbar .items .item:last-child a {
+    width: auto;
+  }
+
+  .navbar .logo {
+    margin-left: 0;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .Container-1 .little-Container-1 {
+    width: 100%;
+  }
+
+  .Container-1 .little-Container-1 h1 {
+    font-size: 40px;
+  }
+  .Fetures-3 .article h1 {
+    font-size: 35px;
+  }
+  .Fetures-3 .boxes {
+    width: auto;
+  }
+
+  .Testimonials-1 .clients {
+    width: auto;
+  }
+
+  .Team-1 .people {
+    width: auto;
+  }
+
+  .Footer-6 .links {
+    width: auto;
+  }
+
+  .Footer-6 .links .link {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Contact-1 .text {
+    font-size: medium;
+  }
+  .Contact-1 .Contact-Filter {
+    padding: 5px;
+  }
+
+  .Contact-1 .form .inputs {
+    width: auto;
+    flex-direction: column;
+  }
+
+  .Contact-1 .form .inputs input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .Contact-1 .form textarea {
+    width: 440px;
+  }
+
+  .Contact-Bottom {
+    flex-direction: column;
+  }
+
+  .Contact-Bottom button {
+    margin-top: 1rem;
+  }
+}
