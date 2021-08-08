@@ -16,6 +16,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useHistory } from "react-router";
 import db from "../firebase";
 import alertify from "alertifyjs";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
@@ -80,7 +81,7 @@ const SignIn = () => {
         alertify.success(`Welcome! ${user.name}`, 1);
         setEmail("");
         setPassword("");
-        history.push("/cart");
+        history.push("/");
       } else checkNum++;
     });
     if (checkNum === users.length) alertify.error("User not found", 1);

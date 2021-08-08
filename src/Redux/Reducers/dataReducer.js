@@ -21,8 +21,11 @@ const dataReducer = (state = initialState, { type, payload }) => {
       localStorage.removeItem("currentUser");
       return {
         ...state,
+        cart: [],
         currentUser: null,
       };
+
+  
     default:
       return state;
   }

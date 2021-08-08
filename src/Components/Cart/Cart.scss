@@ -5,6 +5,7 @@
 }
 .cart-container .navbar {
   border-bottom: 1px solid grey !important;
+  box-shadow: 0px 0px 40px black;
 }
 .cart-container .navbar .items .link {
   color: black !important;
@@ -31,9 +32,18 @@
 
 /* Cart */
 
+.flex {
+  margin: 20px auto;
+  width: 90rem;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
 .cart-container .title {
   text-align: center;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -46,29 +56,27 @@
 }
 
 .cart-container .cart table {
-  width: 50rem;
+  width: 60rem;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  margin-left: 2rem;
   padding: 1rem;
   text-align: center;
   margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 .cart-container .cart table tr th {
   font-size: 20px;
   font-weight: bold;
-  padding: 5px 0;
+  padding: 10px 0;
   height: auto;
 }
 
-.cart-container .cart table tr {
-  line-height: 5rem;
-}
-
-.cart-container .cart table .line .about {
-  display: flex;
-  align-items: center;
+.cart-container .cart table tr td {
+  margin-top: 1rem;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  padding: 10px 0;
 }
 
 .cart-container .cart table .line .about p {
@@ -103,10 +111,15 @@
   font-size: 18px;
 }
 
+.cart-container .cart table .right-btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .cart-container .cart table .right-btns button {
   background: none;
-  margin-right: 10px;
-  margin-left: 10px;
+
   border-radius: 3px;
   border: 1px solid lightgrey;
   cursor: pointer;
@@ -118,12 +131,127 @@
   color: grey;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
+.cart-container .cart table tfoot {
+  text-align: left;
+}
+.cart-container .cart table tfoot button {
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.8 ease all;
+  background-color: white;
+  border: 1px solid lightgrey;
+}
+
+.cart-container .cart table tfoot button i {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: black;
+}
+
 /* Empty Cart */
+
 .empty-cart {
   text-align: center;
   margin-top: 1rem;
   font-size: 30px;
+}
+
+/* Total */
+.coupon-total {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8rem;
+  margin-right: 1rem;
+}
+
+.coupon-total .coupon {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
+.coupon-total .coupon form {
+  width: 100%;
+}
+.coupon-total .coupon p {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.coupon-total .coupon input {
+  border: 1px solid lightgrey;
+  height: 52px;
+  width: 80%;
+  border-radius: 10px 0 0 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+.coupon-total .coupon button {
+  border: none;
+  height: 52px;
+  border-radius: 0 10px 10px 0;
+  font-size: 18px;
+  background-color: #3167eb;
+  color: white;
+  cursor: pointer;
+  width: 20%;
+}
+
+.coupon-total .total {
+  line-height: 40px;
+  border-radius: 10px;
+  margin-top: 2rem;
+  padding: 20px;
+  border: 1px solid lightgrey;
+}
+
+.coupon-total .total .total-select {
+  border-top: 1px solid lightgrey;
+}
+
+.coupon-total .total .total-select button {
+  height: 50px;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #ccf0d1;
+  background-color: #3167eb;
+  cursor: pointer;
+  color: white;
+  transition: 0.8s ease all;
+}
+
+/* responsive */
+@media only screen and (max-width: 840px) {
+  .cart-container .cart table {
+    width: 100%;
+    padding: 0;
+  }
+  .cart-container .cart table .right-btns button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 1408px) {
+  .flex {
+    width: auto;
+  }
+  .coupon-total {
+    margin-top: 1rem;
+  }
 }
 
 @media only screen and (max-width: 1300px) {

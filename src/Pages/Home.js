@@ -1,74 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { cartActions } from "../Redux/Actions";
-import { Link } from "react-router-dom";
 import alertify from "alertifyjs";
 import db from "../firebase";
+import Api from "../Api";
 import "./Home.scss";
 
 const Home = () => {
+  let cart = [];
   const [clients] = useCollectionData(
     db.collection("clients").orderBy("time", "desc").limit(3)
   );
+  const history = useHistory();
 
   const currentUser = useSelector((state) => state.dataReducer.currentUser);
-  const [cart] = useCollectionData(db.collection(`${currentUser?.email}-Cart`));
+  if (!currentUser) history.push("/signin");
+
+  const dispatch = useDispatch();
+  const { getCart } = bindActionCreators(cartActions, dispatch);
+
+  useEffect(() => {
+    let newCart = [];
+    db.collection(`${currentUser?.email}-Cart`).onSnapshot((snap) => {
+      if (snap?.docs?.length) {
+        newCart = [];
+        snap.docs.map((doc, i) => {
+          newCart.push({
+            ...doc.data(),
+            id: doc.id,
+          });
+          if (i === snap.docs.length - 1) {
+            cart = [...newCart];
+            getCart([...newCart]);
+          }
+          return;
+        });
+      } else {
+        getCart([]);
+      }
+    });
+  });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const products = [
-    {
-      name: "MacBook",
-      price: 2000,
-      link: "https://images.pexels.com/photos/7057/desk-office-computer-imac.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    },
-
-    {
-      name: "MacBook Air",
-      price: 3000,
-      link: "https://images.pexels.com/photos/326502/pexels-photo-326502.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    },
-
-    {
-      name: "MacBook Pro",
-      price: 3500,
-      link: "https://images.pexels.com/photos/265144/pexels-photo-265144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    },
-
-    {
-      name: "MackBook Air Pro",
-      price: 4500,
-      link: "https://images.pexels.com/photos/92904/pexels-photo-92904.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    },
-
-    {
-      name: "MacBook X",
-      price: 4500,
-      link: "https://images.pexels.com/photos/912388/pexels-photo-912388.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    },
-
-    {
-      name: "MackBook XS",
-      price: 7000,
-      link: "https://images.pexels.com/photos/2349209/pexels-photo-2349209.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    },
-  ];
-
-  const person = [
-    "https://images.pexels.com/photos/3772510/pexels-photo-3772510.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  ];
-  const peopleName = ["Sarah Taylor", "Emiliano Melo", "Marry Less"];
+  const products = Api.products.filter((item, i) => i < 6);
+  const person = Api.person;
   const lorem =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores modi est error culpa, obcaecati veniam sequi provident in. Voluptatem";
 
-  const dispatch = useDispatch();
-
-  const { addToCart } = bindActionCreators(cartActions, dispatch);
   const goTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -119,8 +102,22 @@ const Home = () => {
       alertify.warning("Please fill in all the blanks", 1);
     }
   };
-  const addProductToCart = (product, user, cart) => {
-    addToCart(product, user, cart);
+  const addToCart = async (product, user) => {
+    let findItem = cart.filter((item) => item.name === product.name);
+    if (findItem.length) {
+      await db
+        .collection(`${user.email}-Cart`)
+        .doc(findItem[findItem.length - 1].id)
+        .set({
+          ...product,
+          quantity: findItem[findItem.length - 1].quantity + 1,
+        });
+    } else {
+      await db.collection(`${user.email}-Cart`).add({
+        ...product,
+        quantity: 1,
+      });
+    }
     alertify.success(`${product.name} added to cart.`, 1);
   };
 
@@ -144,17 +141,17 @@ const Home = () => {
                   </Link>
                 </li>
                 <li className="item">
-                  <Link to="/" className="link">
+                  <Link to="/products" className="link">
                     Products
                   </Link>
                 </li>
                 <li className="item">
-                  <Link to="/" className="link">
+                  <Link to="/about" className="link">
                     About Us
                   </Link>
                 </li>
                 <li className="item">
-                  <Link to="/" className="link">
+                  <Link to="/contact" className="link">
                     Contact
                   </Link>
                 </li>
@@ -253,13 +250,10 @@ const Home = () => {
                 <div className="product" key={i}>
                   <figure>
                     <img src={product.link} alt={product.name} />
-                    <figcaption>
-                      {product.name} &nbsp; - &nbsp; {product.price} $
-                    </figcaption>
+                    <figcaption>{product.name} &nbsp;</figcaption>
+                    <figcaption>- &nbsp; {product.price} $ </figcaption>
                   </figure>
-                  <button
-                    onClick={() => addProductToCart(product, currentUser, cart)}
-                  >
+                  <button onClick={() => addToCart(product, currentUser)}>
                     Add to <i className="bi bi-cart4"></i>
                   </button>
                 </div>
@@ -305,11 +299,11 @@ const Home = () => {
           <div className="people">
             {person.map((people, i) => (
               <div className="person" key={i}>
-                <img src={people} alt={peopleName[i]} height="500" />
+                <img src={people.photo} alt={people.name} height="500" />
                 <div className="article">
                   <figure>
-                    <figcaption>{peopleName[i]}</figcaption>
-                    <figcaption className="rank">Ceo</figcaption>
+                    <figcaption>{people.name}</figcaption>
+                    <figcaption className="rank">{people.rank}</figcaption>
                   </figure>
                   <div className="icons">
                     <i className="bi bi-facebook"></i>

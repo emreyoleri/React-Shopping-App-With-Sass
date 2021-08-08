@@ -1,0 +1,132 @@
+/* Navbar */
+
+.about-container .navbar {
+  border-bottom: 1px solid lightgrey;
+  box-shadow: 0px 0px 30px black;
+}
+.about-container .navbar .items .link {
+  color: black !important;
+}
+
+.about-container .navbar .items .link:hover {
+  color: black !important;
+  background-color: white;
+}
+
+/* Our Mission */
+
+.our-mission {
+  padding: 2rem;
+  width: 90rem;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: 0 0 10px lightgrey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-mission h3 {
+  font-family: "Poppins" sans-serif;
+  font-size: 35px;
+  font-family: "Quicksand", sans-serif;
+  margin: 1rem;
+  margin-bottom: 1rem;
+}
+
+.our-mission p {
+  text-align: left;
+  margin-top: 1rem;
+  font-size: 20px;
+}
+
+/* People */
+
+.about-container .people {
+  margin: 20px auto;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.about-container .people .person {
+  width: auto;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+}
+
+.about-container .people .person img {
+  border-radius: 10px 10px 0 0;
+  border: 5px solid #5cacee;
+  width: 300px;
+}
+
+.about-container .people .person .article {
+  border-radius: 0 0 10px 10px;
+  width: 300px;
+  background: #5cacee;
+  padding: 10px;
+}
+
+.about-container .people .person .article figure {
+  padding: 0 10px;
+}
+
+.about-container .people .person .article figure figcaption {
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.about-container .people .person .article p {
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.about-container .people .person .article figure .rank {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 25px;
+  text-align: center;
+  color: lightgrey;
+}
+
+.about-container .people .person .article .icons {
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.about-container .people .person .article .icons i {
+  font-size: 25px;
+  color: white;
+  transition: 0.8s ease all;
+  cursor: pointer;
+}
+
+.about-container .people .person .article .icons i:hover {
+  color: black;
+}
+
+/* Responsive */
+
+@media only screen and(max-width:1500px) {
+  .our-mission {
+    width: 80%;
+  }
+}

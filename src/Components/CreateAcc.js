@@ -67,6 +67,7 @@ const SignUp = () => {
         if (user.password === password) {
           check = false;
         }
+        return;
       });
       if (check) {
         let newUser = {
@@ -86,7 +87,7 @@ const SignUp = () => {
         setEmail("");
         setPassword("");
         setGender("Male");
-        history.push("/cart");
+        history.push("/");
       } else {
         alertify.error("This email has already been saved in the system.", 1);
       }
