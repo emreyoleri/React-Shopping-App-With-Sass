@@ -32,7 +32,6 @@
 }
 
 .contact-container .contact .contact-information .email {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -46,6 +45,7 @@
   box-shadow: 0 1px 10px lightgrey;
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -131,5 +131,21 @@
 @media only screen and(max-width:1480px) {
   .contact {
     width: auto;
+  }
+}
+
+/* For very small */
+
+@media only screen and(max-width:480px) {
+  .contact-container .contact .contact-information .phone-num,
+  .contact-container .contact .contact-information .email {
+    width: 100%;
+    margin: 1rem auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    word-break: break-all;
   }
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import phoneImg from "../../Images/phone.jpg";
 import alertify from "alertifyjs";
 import Api from "../../Api";
 import db from "../../firebase";
+
 import "./Products.scss";
 
 const Products = () => {
@@ -132,6 +134,11 @@ const Products = () => {
           ))}
         </div>
       </div>
+      <p className="very-small">
+        Our site does not support this screen size
+        <h4>Turn your phone</h4>
+        <img src={phoneImg} alt="" />
+      </p>
     </>
   );
 };

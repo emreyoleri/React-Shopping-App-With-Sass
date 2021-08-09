@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { cartActions } from "../Redux/Actions";
+import phoneImg from "../../Images/phone.jpg";
 import alertify from "alertifyjs";
 import db from "../firebase";
 import Api from "../Api";
@@ -156,7 +157,7 @@ const Home = () => {
                   </Link>
                 </li>
                 <li className="item">
-                  <Link to={currentUser ? "/cart" : "/signin"} className="link">
+                  <Link to="/cart" className="link">
                     <i className="bi bi-cart3"></i>
                   </Link>
                 </li>
@@ -412,6 +413,11 @@ const Home = () => {
           <p>Made With Love By Figmaland All Right Reserved </p>
         </div>
       </div>
+      <p className="very-small">
+        Our site does not support this screen size
+        <h4>Turn your phone</h4>
+        <img src={phoneImg} alt="" />
+      </p>
     </>
   );
 };

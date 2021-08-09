@@ -52,6 +52,10 @@ body {
   cursor: pointer;
 }
 
+.very-small {
+  display: none;
+}
+
 /* Header */
 
 .Header {
@@ -110,6 +114,11 @@ body {
 .navbar .items .item:hover .link {
   background-color: $fontColor;
   color: black;
+}
+
+.navbar .items .item:last-child:hover .link {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
 }
 
 /* Container-1 */
@@ -427,16 +436,16 @@ body {
 .Team-1 .people {
   margin: 20px auto;
   width: 90rem;
-  height: auto;
-  flex-wrap: wrap;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
 .Team-1 .people .person {
   margin-top: 1rem;
+  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -507,16 +516,18 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 5rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Contact-1 .text {
   width: auto;
   font-size: x-large;
-  margin-top: 3rem;
-  margin-left: 1.2rem;
   margin-bottom: 2rem;
   color: white;
+  text-align: center;
 }
 
 .Contact-1 .form {
@@ -524,6 +535,7 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 .Contact-1 .form .inputs {
@@ -694,20 +706,23 @@ body {
 
 /* Responsive */
 
-@media only screen and (min-width: 2000px) {
-  .Contact-1 .Contact-Filter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media only screen and(max-width:1500px) {
+  .Team-1 .people {
+    width: auto;
   }
 }
+
 @media only screen and (max-width: 1300px) {
   .navbar {
     flex-direction: column;
     height: auto;
   }
 
+  .navbar .items {
+    padding: 10px 0 0 0;
+    width: 100%;
+  }
+  
   .navbar .items .item {
     margin-left: 5px;
     margin-bottom: 10px;
@@ -746,10 +761,6 @@ body {
     width: auto;
   }
 
-  .people {
-    width: auto;
-  }
-
   .Footer-6 .links {
     width: auto;
   }
@@ -777,15 +788,88 @@ body {
     margin-bottom: 1rem;
   }
 
-  .Contact-1 .form textarea {
-    width: 440px;
-  }
-
   .Contact-Bottom {
     flex-direction: column;
+    text-align: center;
   }
 
   .Contact-Bottom button {
     margin-top: 1rem;
+  }
+
+  .Contact-1 .form {
+    width: auto;
+  }
+}
+
+@media only screen and(max-width:600px) {
+  .top-btn {
+    height: 50px;
+    width: 50px;
+  }
+  .navbar .items {
+    justify-content: center;
+  }
+
+  .Container-1 .little-Container-1 h1 {
+    font-size: 30px;
+  }
+
+  .Container-1 .little-Container-1 p {
+    font-size: 15px;
+  }
+
+  .Container-1 .little-Container-1 .btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Container-1 .little-Container-1 .btns .btn-2 {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .Fetures-3 .boxes .box {
+    width: 100%;
+  }
+
+  .Footer-6 .footbar {
+    flex-direction: column;
+  }
+  .Footer-6 .footbar .icons {
+    margin-top: 10px;
+  }
+}
+
+/* For very small */
+
+@media only screen and(max-width:480px) {
+  .navbar .items .item .link {
+    padding: 7px 0;
+    width: 65px;
+    font-size: 10px;
+  }
+  .container h1 {
+    font-size: 35px !important;
+  }
+}
+
+@media only screen and(max-width:350px) {
+  .container,
+  .products-container,
+  .cart-container,
+  .contact-container,
+  .about-container {
+    display: none;
+  }
+
+  .very-small {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-family: "poppins", sans-serif;
+    margin-top: 2rem;
   }
 }

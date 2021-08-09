@@ -87,12 +87,19 @@
   border-radius: 5px;
   margin-right: 1.5rem;
   margin-left: 1.5rem;
+  height: 70px;
 }
 
+.cart-container .cart table .btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .cart-container .cart table .btns button {
   margin-left: 10px;
   margin-right: 10px;
   width: 30px;
+  height: 30px;
   border-radius: 5px;
   border: none;
   padding: 5px;
@@ -119,7 +126,6 @@
 
 .cart-container .cart table .right-btns button {
   background: none;
-
   border-radius: 3px;
   border: 1px solid lightgrey;
   cursor: pointer;
@@ -127,12 +133,6 @@
   padding: 0 10px;
 }
 
-.cart-container .cart table .right-btns button i {
-  color: grey;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .cart-container .cart table tfoot {
   text-align: left;
 }
@@ -169,7 +169,7 @@
   height: 400px;
   display: flex;
   flex-direction: column;
-  margin-top: 8rem;
+  margin-top: 3rem;
   margin-right: 1rem;
 }
 
@@ -234,23 +234,19 @@
 }
 
 /* responsive */
-@media only screen and (max-width: 840px) {
-  .cart-container .cart table {
-    width: 100%;
-    padding: 0;
-  }
-  .cart-container .cart table .right-btns button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
 
-@media only screen and (max-width: 1408px) {
+@media only screen and (max-width: 1440px) {
   .flex {
-    width: auto;
+    width: 100%;
   }
+  .cart-container .cart table {
+    width: 50rem;
+  }
+
   .coupon-total {
-    margin-top: 1rem;
+    padding: 0 20px;
+    width: 50rem;
+    margin: 3rem auto;
   }
 }
 
@@ -267,5 +263,45 @@
     text-align: center;
     height: auto;
     padding: 10px !important;
+  }
+}
+
+@media only screen and(max-width:800px) {
+  .cart-container .cart table {
+    width: 30rem;
+    margin: 0 auto;
+  }
+}
+
+/* For very small */
+
+@media only screen and(max-width:480px) {
+  .cart-container .navbar .items .item .link {
+    width: auto;
+  }
+  .cart-container .cart table {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .cart-container .cart table {
+    font-size: 12px;
+  }
+  .cart-container .cart table .btns {
+    flex-direction: column;
+  }
+  .cart-container .cart table .btns button {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart-container .cart table .right-btns button {
+    padding: 5px;
+    margin-left: 10px;
+  }
+  .coupon-total {
+    padding: 0 20px;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import alertify from "alertifyjs";
+import phoneImg from "../../Images/phone.jpg";
 import "./Contact.scss";
 
 const Contact = () => {
@@ -93,6 +93,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <p className="very-small">
+        Our site does not support this screen size
+        <h4>Turn your phone</h4>
+        <img src={phoneImg} alt="" />
+        </p>
     </>
   );
 };

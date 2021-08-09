@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import phoneImg from "../../Images/phone.jpg";
 import Api from "../../Api";
 import "./About.scss";
 
@@ -128,6 +129,11 @@ const About = () => {
           </div>
         </div>
       </div>
+      <p className="very-small">
+        Our site does not support this screen size
+        <h4>Turn your phone</h4>
+        <img src={phoneImg} alt="" />
+      </p>
     </>
   );
 };

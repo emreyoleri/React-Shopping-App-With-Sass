@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { dataActions } from "../../Redux/Actions";
+import phoneImg from "../../Images/phone.jpg";
 import alertify from "alertifyjs";
 import db from "../../firebase";
 import "./Cart.scss";
@@ -132,23 +133,25 @@ const Cart = () => {
                       {cart?.map((product, i) => (
                         <tr className="line" key={i}>
                           <td className="about">
-                            <img src={product.link} alt="" height="70" />
+                            <img src={product.link} alt="" />
                             <p>{product.name}</p>
                           </td>
-                          <td className="btns">
-                            <button
-                              onClick={() =>
-                                removeOneItemFromCart(product, currentUser)
-                              }
-                            >
-                              -
-                            </button>
-                            <span>{product.quantity}</span>
-                            <button
-                              onClick={() => addToCart(product, currentUser)}
-                            >
-                              +
-                            </button>
+                          <td>
+                            <div className="btns">
+                              <button
+                                onClick={() =>
+                                  removeOneItemFromCart(product, currentUser)
+                                }
+                              >
+                                <b>-</b>
+                              </button>
+                              <span>{product.quantity}</span>
+                              <button
+                                onClick={() => addToCart(product, currentUser)}
+                              >
+                                <b>+</b>
+                              </button>
+                            </div>
                           </td>
                           <td className="price">
                             <p>
@@ -158,9 +161,6 @@ const Cart = () => {
                           </td>
                           <td>
                             <div className="right-btns">
-                              <button>
-                                <i className="bi bi-suit-heart-fill"></i>
-                              </button>
                               <button
                                 onClick={() =>
                                   removeFromCart(product, currentUser)
@@ -224,6 +224,11 @@ const Cart = () => {
             )}
           </div>
         </div>
+        <p className="very-small">
+          Our site does not support this screen size
+          <h4>Turn your phone</h4>
+          <img src={phoneImg} alt="" />
+        </p>
       </>
     );
   } else {
