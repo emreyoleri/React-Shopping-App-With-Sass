@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { cartActions } from "../Redux/Actions";
-import phoneImg from "../../Images/phone.jpg";
+import phoneImg from "../Images/phone.jpg";
 import alertify from "alertifyjs";
 import db from "../firebase";
 import Api from "../Api";
