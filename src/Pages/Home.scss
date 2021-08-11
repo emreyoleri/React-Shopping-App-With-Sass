@@ -509,6 +509,7 @@ body {
   height: 750px;
   background-size: cover;
   background-image: url(../Images/cover.png);
+  background-position: center center;
 }
 
 .Contact-1 .Contact-Filter {
@@ -722,19 +723,10 @@ body {
     padding: 10px 0 0 0;
     width: 100%;
   }
-  
+
   .navbar .items .item {
     margin-left: 5px;
     margin-bottom: 10px;
-  }
-
-  .navbar .items .item a {
-    width: 100px;
-    text-align: center;
-  }
-
-  .navbar .items .item:last-child a {
-    width: auto;
   }
 
   .navbar .logo {
@@ -846,7 +838,7 @@ body {
 /* For very small */
 
 @media only screen and(max-width:480px) {
-  .navbar .items .item .link {
+  .link {
     padding: 7px 0;
     width: 65px;
     font-size: 10px;

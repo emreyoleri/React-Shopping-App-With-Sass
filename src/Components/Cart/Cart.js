@@ -97,14 +97,12 @@ const Cart = () => {
                   Home
                 </Link>
               </li>
-
               <li className="item">
                 <div className="link">
                   <i className="bi bi-person-circle"></i> &nbsp;
                   {currentUser.email}
                 </div>
               </li>
-
               <li className="item">
                 <button className="link" onClick={() => signOut(currentUser)}>
                   Sign Out
@@ -120,7 +118,6 @@ const Cart = () => {
                     <h3>Shopping Cart</h3>
                     <p>items in your cart</p>
                   </div>
-
                   <table>
                     <tbody>
                       <tr className="tbody-title">
@@ -129,7 +126,6 @@ const Cart = () => {
                         <th>Price</th>
                         <th></th>
                       </tr>
-
                       {cart?.map((product, i) => (
                         <tr className="line" key={i}>
                           <td className="about">

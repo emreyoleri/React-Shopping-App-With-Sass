@@ -4,6 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { cartActions } from "../Redux/Actions";
+import {
+  Header,
+  Filter,
+  Navbar,
+  Logo,
+  Items,
+  Item,
+  Container__1,
+  Little__Container__1,
+  Btns,
+  Btn__1,
+  Btn__2,
+} from "../Styled/Header.style";
 import phoneImg from "../Images/phone.jpg";
 import alertify from "alertifyjs";
 import db from "../firebase";
@@ -128,56 +141,56 @@ const Home = () => {
         <div className="top-btn" onClick={goTop}>
           <i className="bi bi-arrow-up"></i>
         </div>
-
-        <div className="Header">
-          <div className="filter">
-            <div className="navbar">
-              <div className="logo">
+        <Header bgColor="white">
+          <Filter>
+            <Navbar>
+              <Logo>
                 <h2>Carure</h2>
-              </div>
-              <ul className="items">
-                <li className="item">
+              </Logo>
+              <Items>
+                <Item>
                   <Link to="/" className="link">
                     Home
                   </Link>
-                </li>
-                <li className="item">
+                </Item>
+                <Item>
                   <Link to="/products" className="link">
                     Products
                   </Link>
-                </li>
-                <li className="item">
+                </Item>
+                <Item>
                   <Link to="/about" className="link">
                     About Us
                   </Link>
-                </li>
-                <li className="item">
+                </Item>
+                <Item>
                   <Link to="/contact" className="link">
                     Contact
                   </Link>
-                </li>
-                <li className="item">
-                  <Link to="/cart" className="link">
+                </Item>
+                <Item>
+                  <Link to="/cart" className="link last-link">
                     <i className="bi bi-cart3"></i>
                   </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="Container-1">
-              <div className="little-Container-1">
+                </Item>
+              </Items>
+            </Navbar>
+            <Container__1>
+              <Little__Container__1 H1size="58px" PSize="20px">
                 <h1>We Take Care of the Fature</h1>
                 <p>
                   We know how large objects will act. but things on a small
                   scale just do not act that way
                 </p>
-                <div className="btns">
-                  <button className="btn-1">Get Quote Now</button>
-                  <button className="btn-2">Learn More</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                <Btns>
+                  <Btn__1 bgColor="#ffa62b">Get Quote Now</Btn__1>
+                  <Btn__2>Learn More</Btn__2>
+                </Btns>
+              </Little__Container__1>
+            </Container__1>
+          </Filter>
+        </Header>
+
         <hr />
         <div className="Fetures-3" id="Fetures-3">
           <div className="article">
@@ -368,7 +381,7 @@ const Home = () => {
           </div>
 
           <div className="links">
-            <ul className="link">
+            <ul>
               <li>
                 <h4>Company</h4>
               </li>
@@ -378,7 +391,7 @@ const Home = () => {
               <li>Blog</li>
             </ul>
 
-            <ul className="link">
+            <ul>
               <li>
                 <h4>Legal</h4>
               </li>
@@ -388,7 +401,7 @@ const Home = () => {
               <li>Blog</li>
             </ul>
 
-            <ul className="link">
+            <ul>
               <li>
                 <h4>Features</h4>
               </li>
@@ -398,7 +411,7 @@ const Home = () => {
               <li>Blog</li>
             </ul>
 
-            <ul className="link">
+            <ul>
               <li>
                 <h4>Resources</h4>
               </li>

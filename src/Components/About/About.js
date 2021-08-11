@@ -60,9 +60,7 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
             quo.
           </i>
-
           <h3>About Us</h3>
-
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
             modi ipsa nam aliquam! Quasi ratione aliquid at sint praesentium
@@ -102,7 +100,6 @@ const About = () => {
             cupiditate sapiente cumque, saepe iste deleniti adipisci facere
             harum.
           </p>
-
           <div className="people">
             {person.map((people, i) => (
               <div className="person" key={i}>
