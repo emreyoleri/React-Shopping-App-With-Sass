@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { dataActions } from "../../Redux/Actions";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import phoneImg from "../../Images/phone.jpg";
 import alertify from "alertifyjs";
 import db from "../../firebase";
@@ -13,7 +14,10 @@ const Cart = () => {
   const [inpValue, setInpValue] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
-  const discountCode = "123";
+  const [discountCodeData] = useCollectionData(db.collection("discountCode"));
+  const discountCode =
+    discountCodeData && discount.length ? discount : "newuser";
+  console.log(discountCode);
 
   const currentUser = useSelector((state) => state.dataReducer.currentUser);
   const cart = useSelector((state) => state.cartReducer.cart);
@@ -30,8 +34,7 @@ const Cart = () => {
 
   const applyDiscount = (e) => {
     e.preventDefault();
-    console.log("geldi");
-    if (inpValue !== " " && inpValue.length && inpValue === discountCode) {
+    if (inpValue !== " " && inpValue.toUpperCase === discountCode.toUpperCase) {
       setDiscount(10);
       alertify.success("Discount applied successfully.", 1);
       setInpValue("");
@@ -189,6 +192,7 @@ const Cart = () => {
                         type="text"
                         value={inpValue}
                         onChange={(e) => setInpValue(e.target.value)}
+                        required
                       />
                       <button type="submit">Apply</button>
                     </form>

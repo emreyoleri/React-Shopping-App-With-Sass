@@ -326,6 +326,7 @@ body {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
 .Features-11 .second .products .product button {
   border: none;
   width: 187px;
@@ -337,6 +338,7 @@ body {
   transition: $animation;
   font-size: 17px;
 }
+
 .Features-11 .second .products .product button:hover {
   background-color: #90e5f7;
   color: black;
@@ -669,7 +671,7 @@ body {
   color: #e42f08;
 }
 
-.Footer-6 .links {
+.Footer-6 .footer-links {
   flex-wrap: wrap;
   width: 100%;
   height: auto;
@@ -680,7 +682,7 @@ body {
   color: lightgrey;
 }
 
-.Footer-6 .links .link {
+.Footer-6 .footer-links .link {
   list-style-type: none;
   line-height: 2rem;
   cursor: pointer;
@@ -691,7 +693,7 @@ body {
   border-radius: 5px;
 }
 
-.Footer-6 .links .link li:first-child h4 {
+.Footer-6 .footer-links .link li:first-child h4 {
   font-size: 22px;
   margin-bottom: 1rem;
   letter-spacing: 1.2px;
@@ -766,6 +768,7 @@ body {
   .Contact-1 .text {
     font-size: medium;
   }
+  
   .Contact-1 .Contact-Filter {
     padding: 5px;
   }
@@ -799,6 +802,7 @@ body {
     height: 50px;
     width: 50px;
   }
+
   .navbar .items {
     justify-content: center;
   }
@@ -830,6 +834,7 @@ body {
   .Footer-6 .footbar {
     flex-direction: column;
   }
+
   .Footer-6 .footbar .icons {
     margin-top: 10px;
   }
@@ -843,6 +848,7 @@ body {
     width: 65px;
     font-size: 10px;
   }
+
   .container h1 {
     font-size: 35px !important;
   }

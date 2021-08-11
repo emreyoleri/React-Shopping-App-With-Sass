@@ -190,9 +190,8 @@ const Home = () => {
             </Container__1>
           </Filter>
         </Header>
-
         <hr />
-        <div className="Fetures-3" id="Fetures-3">
+        <div className="Fetures-3">
           <div className="article">
             <h1>Why Choose Us</h1>
             <p>
@@ -247,7 +246,7 @@ const Home = () => {
         </div>
         <hr />
 
-        <div className="Features-11" id="Features-11">
+        <div className="Features-11">
           <div className="first">
             <div className="text">
               <h1>Recently preferred products</h1>
@@ -330,7 +329,7 @@ const Home = () => {
           </div>
         </div>
         <hr />
-        <div className="Contact-1" id="Contact-1">
+        <div className="Contact-1">
           <div className="Contact-Filter">
             <div className="text">
               <h4>Contact Us </h4>
@@ -380,8 +379,8 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="links">
-            <ul>
+          <div className="footer-links">
+            <ul className="link">
               <li>
                 <h4>Company</h4>
               </li>
@@ -391,7 +390,7 @@ const Home = () => {
               <li>Blog</li>
             </ul>
 
-            <ul>
+            <ul className="link">
               <li>
                 <h4>Legal</h4>
               </li>
@@ -401,7 +400,7 @@ const Home = () => {
               <li>Blog</li>
             </ul>
 
-            <ul>
+            <ul className="link">
               <li>
                 <h4>Features</h4>
               </li>
@@ -411,7 +410,7 @@ const Home = () => {
               <li>Blog</li>
             </ul>
 
-            <ul>
+            <ul className="link">
               <li>
                 <h4>Resources</h4>
               </li>
